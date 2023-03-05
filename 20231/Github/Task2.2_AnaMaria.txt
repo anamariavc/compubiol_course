@@ -1,0 +1,26 @@
+Respuesta:
+Identificar genes parálogos por medio de un alineamiento BLAST no es tan
+certero o preciso solo a partir de los resultados obtenidos en el BLAST.
+Por otro lado, el porcentaje de identidad de la secuencia DQ060923.1 presenta una alta similitud,
+es significativo. Recordando que no se puede asegurar del tipo de genes
+presentes, la interpretación de los datos BLAST puede identificar similitudes
+entre secuencias más no la la información exacta de los genes presentes.
+
+Con la información obtenida en el BLAST, el porcentaje de identidad para los
+alineamientos no superar el umbral del 90% de identidad y tampoco se puede
+evidenciar un porcentaje de cobertura de dicho alineamiento para rectificar
+que el porcentaje de identidad está soportado por los datos. En este caso, ya que los porcentajes de identidad 
+primera instancia, no corresponderían a genes ortólogos con la misma función.
+
+Para hacer filogenias utilizaría, en lo posible, genes ortólogos puesto que estos
+permiten obtener información de secuencias de genes provenientes de un ancestro común y de tal forma la función de
+diferentes especies.
+
+Finalmente, para extraer las secuencias de estos genes se podría hacer por
+medio del identificador de la secuencia y la longitud de las secuencias. Se podría usar el mismo
+código que usamos para ejecutar los hits del BLAST, pero ahora se podría añadir una treceava columna donde el
+comando blastn -db databases/reference -query sequence_amanita.fasta -evalue 1e-3 -word_size 11 -outfmt
+'6 qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue bitscore sseq' -out
+ archivo_blast.txt' puede buscar las similitudes de las secuencias dentro de las base de datos que
+creamos y mostrando las secuencias correspondientes a los hits del BLAST, ecribiendo los resultados
+en un archivo de texto.

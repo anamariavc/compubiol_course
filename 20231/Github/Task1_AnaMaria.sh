@@ -21,3 +21,5 @@ ls -oh *sh
 open sequence1.fasta
 #!/bin/bash
 infile=$1
+cat $infile | wc -m
+python Task1_AnaMaria.sh sequence1.fasta
